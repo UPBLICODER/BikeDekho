@@ -1,20 +1,20 @@
 const express = require('express')
+const connectDB = require('./db')
+const router = require('./routes')
+
 const app = express()
 
-const port = 3000
+app.use(express.json())
+
+connectDB();
+
+app.use('/api',router)
 
 app.get('/',(req,res)=>{
     res.send("Hello from server!");
 })
 
-app.put('/user',(req,res)=>{
-    res.send("User updated as per put request")
-})
-
-app.delete("/user", (req, res) => {
-  res.send("User deleted as per delete request");
-});
-
+const port = 3000;
 app.listen(port,()=>{
     console.log(`server is runing on port ${port}`)
 })
