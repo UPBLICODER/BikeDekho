@@ -2,9 +2,7 @@ const mongoose = require('mongoose')
 
 const connectDB = async ()=>{
     try{
-        const conn = await mongoose.connect(
-          `mongodb+srv://shivamkashyap1521:Mongodb@cluster0.sxc8ikt.mongodb.net/BikeDekhoDB?appName=Cluster0`
-        );
+        const conn = await mongoose.connect(process.env.MONGODB_ATLAS_URI);
         console.log(`MongoDB Connected: ${conn.connection.host}`);
     }
     catch(err){
