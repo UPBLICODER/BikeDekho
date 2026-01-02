@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const connectDB = async ()=>{
     try{
         const conn = await mongoose.connect(
-          `mongodb+srv://shivamkashyap1521:Mongodb@cluster0.sxc8ikt.mongodb.net/?appName=Cluster0`
+          `mongodb+srv://shivamkashyap1521:Mongodb@cluster0.sxc8ikt.mongodb.net/BikeDekhoDB?appName=Cluster0`
         );
         console.log(`MongoDB Connected: ${conn.connection.host}`);
     }
